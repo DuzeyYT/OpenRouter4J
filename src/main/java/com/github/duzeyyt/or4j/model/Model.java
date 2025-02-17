@@ -43,7 +43,11 @@ public class Model {
         String id = model.get("id").getAsString();
         String name = model.get("name").getAsString();
 
-        models.add(new Model(id, name, name.endsWith("(free)"))); // rework the is free check
+        JsonObject pricing = model.get("pricing").getAsJsonObject();
+
+        boolean free = pricing.get("prompt").getAsDouble() == 0;
+
+        models.add(new Model(id, name, free));
       }
 
       return models;
