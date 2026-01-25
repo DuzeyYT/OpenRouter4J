@@ -6,7 +6,7 @@ import com.github.duzeyyt.or4j.result.PromptResult;
 public class SimpleTest {
 
   public static void main(String[] args) {
-    // This is a simple test to check if Lombok is working
+    // This is a simple test to check if the library is working
     OpenRouter openRouter = OpenRouter.builder()
         .apiKey("...")
         .build();
